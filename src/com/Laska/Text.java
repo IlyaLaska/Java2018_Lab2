@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Text {
     private String data;
 
+    Text() {this.data = "";}
+
     @Override
     public String toString() {
         return data;
@@ -41,6 +43,10 @@ public class Text {
         String[] strings;
         strings = data.split("[a-zA-Z]+");
         //TODO why is strings[0] always empty?
+        return findLongest(strings);
+    }
+
+    private String findLongest(String[] strings) {
         int maxLen = 0;
         int pos = 0;
         for (int i = 1; i < strings.length; i++) {
